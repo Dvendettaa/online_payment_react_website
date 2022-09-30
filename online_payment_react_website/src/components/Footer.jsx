@@ -1,9 +1,12 @@
 import styles from "../style";
 import { logo } from "../assets";
 import { footerLinks, socialMedia } from "../constants";
+import 'bootstrap/dist/css/bootstrap-grid.min.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {} from '../Aos.js';
 
 const Footer = () => (
-  <section className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
+  <section data-aos={"fade-down"} className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
     <div className={`${styles.flexStart} md:flex-row flex-col mb-8 w-full`}>
       <div className="flex-[1] flex flex-col justify-start mr-10">
         <img
@@ -43,22 +46,33 @@ const Footer = () => (
       <p className="font-poppins font-normal text-center text-[18px] leading-[27px] text-white">
         Copyright Ⓒ 2022 HooBank. All Rights Reserved.
       </p>
+        <div className="flex flex-row md:mt-0 mt-6">
+            {socialMedia.map((social, index) => (
+                <div className={`wrapper ${social.id}`}
+                     onClick={() => window.open(social.link)}>
+                    <div className={"animateButton "}>
+                        <div className={"icon"}>
+                            <i  key={social.id}>
+                                <FontAwesomeIcon icon={social.icon}></FontAwesomeIcon>
+                            </i>
+                        </div>
+                        <span>{social.name}</span>
+                    </div>
+                </div>
 
-      <div className="flex flex-row md:mt-0 mt-6">
-        {socialMedia.map((social, index) => (
-          <img
-            key={social.id}
-            src={social.icon}
-            alt={social.id}
-            className={`w-[21px] h-[21px] object-contain cursor-pointer ${
-              index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
-            }`}
-            onClick={() => window.open(social.link)}
-          />
-        ))}
-      </div>
+            ))}
+        </div>
+
     </div>
   </section>
 );
 
+/*
+                    key={social.id}
+                    src={social.icon}
+                    alt={social.id}
+                    className={`w-[21px] h-[21px] object-contain cursor-pointer ${
+                        index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
+                    }`}
+                    onClick={() => window.open(social.link)}*/
 export default Footer;

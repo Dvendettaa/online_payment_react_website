@@ -1,4 +1,5 @@
 import { people01, people02, people03, facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox, send, shield, star  } from "../assets";
+import {faFacebook, faGithub, faInstagram, faLinkedin, faTwitter} from "@fortawesome/free-brands-svg-icons";
 
 export const navLinks = [
   {
@@ -157,23 +158,33 @@ export const footerLinks = [
 export const socialMedia = [
   {
     id: "social-media-1",
-    icon: instagram,
+    name: "Instagram",
+    icon: faInstagram,
     link: "https://www.instagram.com/",
   },
   {
     id: "social-media-2",
-    icon: facebook,
+    name: "Facebook",
+    icon: faFacebook,
     link: "https://www.facebook.com/",
   },
   {
     id: "social-media-3",
-    icon: twitter,
+    name: "Twitter",
+    icon: faTwitter,
     link: "https://www.twitter.com/",
   },
   {
     id: "social-media-4",
-    icon: linkedin,
+    name: "LinkedIn",
+    icon: faLinkedin,
     link: "https://www.linkedin.com/",
+  },
+  {
+    id: "social-media-5",
+    name: "Github",
+    icon: faGithub,
+    link: "https://www.github.com/",
   },
 ];
 
